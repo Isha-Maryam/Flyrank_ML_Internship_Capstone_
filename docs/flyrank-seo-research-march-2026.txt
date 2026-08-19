@@ -1,0 +1,976 @@
+
+--- Page 1 ---
+DATA REPORT · MARCH 2026
+THE STATE OF
+AI-DRIVEN SEO
+IN NUMBERS.
+We analyzed 341,701 content pieces across 57 brands, using 
+direct portfolio comparisons as the main evidence base and 
+an exploratory ML appendix on 61,790 active content records. 
+The goal is a public-safe study that a reader can act on without 
+FlyRank tooling.
+flyrank.com
+FlyRank — The State of AI-Driven SEO, March 2026 1
+--- Page 2 ---
+FlyRank ABSTRACT
+About This Study
+This paper examines 341,701 content pieces across 57 brands, spanning 469,879,632 search impressions, 1,514,819 
+clicks,1,635,404 sessions, and 17,344 AI sessions.
+Rather than reproducing dashboard screenshots or internal table views, we tested portfolio-level questions about 
+content age, freshness, position, traffic mix, depth, and AI visibility. Direct aggregate comparisons lead the paper. 
+Machine-learning pages appear later as exploratory appendix material.
+The goal is practical clarity, not maximum claim volume. We keep the strongest, most reproducible patterns and 
+demote or remove weaker internal constructs when they are not suitable for a public paper.
+Each finding ends with manual next steps a reader can execute using standard analytics, search, and content-review 
+workflows.
+Thesis
+"The most useful SEO decisions in this portfolio came from simple, validated comparisons: refresh 
+strong content before it decays, protect page-one assets, and interpret composite scoring through 
+raw search performance rather than in place of it."
+FlyRank — The State of AI-Driven SEO, March 2026 2
+--- Page 3 ---
+FlyRank THE DATASET
+341,701
+content pieces analyzed across 57 brands
+90-DAY IMPRESSIONS
+469.9M
+Google Search Console
+90-DAY CLICKS
+1,514,819
+Organic search
+SESSIONS TRACKED
+1.6M
+GA4 data
+AI SESSIONS
+17,344
+Known AI referrals
+AI SHARE
+1.06%
+Of tracked sessions
+AVG HEALTH SCORE
+22.3
+FlyRank composite context
+30-DAY TREND VS PREVIOUS 30 DAYS
++70.6%
+Impressions
++51.9%
+Clicks
++34.2%
+AI Sessions
+Chart read: These cards compare the last 30 days with the 30 days before that. Read them as short-term momentum signals for the portfolio, not as a substitute for the 
+longer 90-day comparisons used in the main findings.
+The portfolio spans newly published pages, established evergreen assets, and underperforming long-tail pages. That 
+range is what makes the lifecycle, freshness, and visibility patterns in this paper useful rather than anecdotal. Scope 
+cards use the local 90-day snapshot for performance metrics, while inventory fields such as content count, age, and 
+word count remain metadata for the full cached portfolio.
+FlyRank — The State of AI-Driven SEO, March 2026 3
+--- Page 4 ---
+FlyRank STUDY SCOPE & EVIDENCE STANDARD
+Study Scope & Evidence Standard.
+Verified totals, reporting windows, and interpretation rules for the rest of the paper.
+This study evaluates the all-portfolio export first. The current paper covers 341,701 content pieces across 57 brands, 
+with 469,879,632 impressions, 1,514,819 clicks,1,635,404 sessions, and 17,344 AI sessions.
+Reporting windows: 90-day performance window (rolling), 30-day trend comparison, local historical monthly series, and 
+local active-content feature-vector cuts where noted.
+VERIFIED TOTAL VALUE
+Content 341,701
+Brands 57
+Impressions 469,879,632
+Clicks 1,514,819
+Sessions 1,635,404
+AI Sessions 17,344
+Metric Windows
+90-day performance window (rolling), 30-day trend comparison, local historical monthly series, and local active-content feature-vector cuts 
+where noted.
+Local Snapshot Rule
+This paper uses the local cached snapshot and local derived exports. Some extended cuts come from the local full feature vector, which is 
+an active-content subset with impressions_90d > 0 and sessions_90d > 0.
+Evidence Standard
+Headline findings prioritize direct aggregate comparisons. ML pages are exploratory appendix material and do not override direct portfolio 
+evidence.
+Interpretation Rule
+External SEO beliefs are treated as hypotheses, not proof. When direct portfolio evidence conflicts with industry narratives, the portfolio result 
+wins.
+FlyRank — The State of AI-Driven SEO, March 2026 4
+--- Page 5 ---
+FlyRank HOW TO READ THIS PAPER
+Understanding the Metrics
+The paper leads with raw search performance. Composite and ML metrics are included only when they add 
+context.
+Health Score (0-100)
+Impressions (30 pts) + position (30 pts) + CTR (20 pts) + scroll depth (20 pts). It is a FlyRank summary metric, not a market-standard outcome 
+metric, so major findings pair it with raw search performance.
+Position Tiers
+Top 3: positions 1-3 | Page 1: positions 4-10 | Striking Distance: positions 11-20 (highest ROI optimization zone) | Page 3-5: positions 21-50 
+| Deep: 50+
+Age & Freshness
+Age: days since content creation. Freshness: days since last content update. These are independent — old content can be freshly updated, 
+and new content can already be stale if never optimized.
+AI Traffic
+Sessions from known AI referrals such as ChatGPT, Perplexity, Gemini, Copilot, Claude, and Meta AI. Currently 1.1% of tracked sessions 
+(17,344 of 1.6M).
+Optimization Flags
+Internal FlyRank workflow labels such as Healthy, Fix CTR, Fix Content, and Zombie Page. They are triage cues, not public definitions of 
+content quality.
+Trend Direction
+Calculated from 30d-vs-prev-30d impression change. Up: >10% growth. Down: >10% decline. Stable: within +/-10%. Flat: insufficient data. 
+New: content created within 30 days.
+Finding Tags
+CONFIRMED Hypothesis validated by data REVERSED Data showed the opposite NUANCED Partially true with caveats
+ML Techniques Used
+K-Means clustering, Random Forest, logistic regression, PCA, and a shallow decision tree appear only in the exploratory appendix. Minimum 
+sample size is 50 per bucket (30 for cross-correlations), and weighted CTR is used where total clicks and impressions are available.
+FlyRank — The State of AI-Driven SEO, March 2026 5
+--- Page 6 ---
+FlyRank FINDING #1 — CONFIRMED
+The Anatomy of Growing Content.
+Hypothesis: content trending upward has a different structural profile than content trending downward.
+The first comparison in the study is deliberately simple: pages with rising impressions versus pages with falling 
+impressions. In this portfolio, the main differences are depth, age, and visibility. Growing pages tend to be longer, 
+younger, and already positioned slightly better in search.
+3180
+avg words (growing)
+2311
+avg words (declining)
+184d
+avg age (growing)
+230d
+avg age (declining)
+DIRECTION COUNT WORDS AGE AVG IMP AVG POS HEALTH
+up 74.8K 3.2K 184d 2.8K 15.9 36.4
+down 45.6K 2.3K 230d 2.6K 16.1 32.4
+Growing content is 37.6% longer (3.2K vs 2.3K words) and 20% younger (184 vs 230 days). Interestingly, declining 
+content is not simply "bad content" in the abstract. Many declining pages still carry meaningful impressions, but they 
+are older, thinner, and less likely to retain momentum. The sample sizes here are large (74,187 rising vs 45,272 falling), 
+so the word-count and age gap is directionally robust even though this remains an observational comparison.
+What to Do With This
+Expand thin pages that already earn impressions
+Why: The rising cohort is materially longer than the declining cohort
+How: List pages under roughly 2,000 words that still earn meaningful impressions, then add missing subtopics, examples, definitions, and 
+comparison sections instead of padding.
+Expected: Improves the odds that an already visible page can keep growing rather than plateauing.
+Measure: Track impressions, clicks, and average position 30 and 60 days after the update.
+Review aging pages before they drift into decline
+Why: The falling cohort is older on average and more likely to have missed a recent refresh cycle
+How: Create a quarterly review for pages that are around 6-9 months old, then prioritize the ones that once performed well but have started to 
+flatten.
+Expected: Protects pages with existing visibility before the decline becomes expensive to reverse.
+Measure: Track refresh coverage and 30-day impression change for reviewed versus unrevised pages.
+FlyRank — The State of AI-Driven SEO, March 2026 6
+--- Page 7 ---
+FlyRank FINDING #2 — CONFIRMED
+The Content Performance Curve.
+Content peaks at 61-90 days, declines after 270 days, and the 365+ rebound is concentrated in older pages 
+that were refreshed.
+HEALTH SCORE BY CONTENT AGE (DAYS)
+0-7 7
+8-14 17
+15-30 29
+31-60 30
+61-90 33
+91-120 26
+121-180 29
+181-270 21
+271-365 14
+365+ 25
+The data reveals a clear lifecycle pattern. Content enters a growth phase during its first 90 days as Google discovers, 
+indexes, and begins ranking it. It hits peak performance at 61-90 days (health score 33.1).
+A maturation plateau follows from 91-180 days where performance stabilizes. Then comes the decay cliff at 271-365 
+days (health drops to 14) — the point where content staleness overtakes accumulated authority. 
+The recovery at 365+ (25.1) is still actionable, but the safe reading is narrower: older pages can recover when they are 
+updated well. This is not evidence that age naturally reverses performance decline on its own.
+Create a review cycle before pages hit the 9-12 month decay zone
+Why: The steepest drop appears once pages move past the stronger mid-life window
+How: Schedule editorial reviews for pages approaching that age range, then refresh the ones with proven demand or strategic importance before 
+they go stale.
+Expected: Helps preserve the visibility that older pages have already earned.
+Measure: Track refreshed-page coverage and compare impression retention before and after the review window.
+FlyRank — The State of AI-Driven SEO, March 2026 7
+--- Page 8 ---
+FlyRank FINDING #3 — CONFIRMED
+Click Capture by Position Tier.
+Weighted portfolio CTR declines sharply as visibility moves away from the top of the results.
+WEIGHTED CTR BY POSITION TIER
+Top 3 0.423%
+Page 1 (4-10) 0.339%
+Striking 0.325%
+Page 3-5 0.163%
+Deep 0.050%
+0.423%
+weighted CTR in top 3
+0.339%
+weighted CTR on page 1
+88%
+drop from top 3 to deep
+These are portfolio-level weighted CTRs computed from total clicks divided by total impressions in each position tier. 
+They are not generic Google CTR benchmarks, and they replace the older per-row average that produced impossible 
+values above 100%.
+The pattern still matters: once content leaves the best positions, click capture compresses quickly. That makes 
+page-one refinement a more reliable source of incremental clicks than spreading effort evenly across pages with little 
+existing visibility.
+Refine search snippets on pages that already rank on page 1
+Why: Small ranking and snippet gains on already-visible pages usually convert into click lift faster than rebuilding weak pages from scratch
+How: Review pages ranking on page 1, tighten titles and descriptions around clear intent, and test more specific promise statements instead of 
+generic headings.
+Expected: Improves click capture on visibility you already own.
+Measure: Track weighted CTR, clicks, and average position for the revised group over the next 30 days.
+Support positions 11-20 with targeted relevance improvements
+Why: Pages just outside page 1 already show search demand and topical fit
+How: Refresh the page, improve internal links from stronger related pages, and tighten the opening sections so the page answers the target query 
+faster.
+Expected: Increases the chance of moving a borderline page into the higher-click part of the curve.
+Measure: Track movement into page 1 and the resulting click lift.
+FlyRank — The State of AI-Driven SEO, March 2026 8
+--- Page 9 ---
+FlyRank FINDING #4 — CONFIRMED
+The Freshness Multiplier.
+The 31-90 day window is the strongest stable freshness band. The `361+` bucket is visible in the chart, but 
+it is too small and too unstable to treat as a headline multiplier.
+GROWTH-TO-DECLINE RATIO BY FRESHNESS WINDOW
+0-30 2
+31-90 8
+91-180 4
+181-360 3
+361+ 283
+The 0-30 day tier is still too early for a stable momentum read. But at 31-90 days, freshness remains the strongest 
+measured growth window at 7.88:1. Splitting the old stale bucket also improves the story: pages that have been 
+untouched for 181-360 days are a different population from the 361+ day tail. In the local active-content sample, 
+`181-360` still reads like a real stale bucket at 3.13:1, while `361+` spikes to 283:1 only because the sample is tiny and 
+there is just 1 declining page in that bucket.
+The most dramatic finding: 365+ day content that was refreshed within 30 days shows 3.2x health boost (from 10.7 to 
+34.5) and 57x more impressions (from 71 to 4039). In this portfolio, refresh timing is one of the strongest measured 
+levers available.
+3.2x
+health boost from refresh
+57x
+impression boost
+7.88:1
+growth ratio at 31-90d
+Chart read: Read 31-90 as the strongest stable freshness signal. The 361+ bar is present because it exists in the local sample, but its 283:1 ratio is unstable: 283 growing 
+pages versus only 1 declining.
+Run a recurring refresh program for mature pages
+Why: Refreshing mature pages produces 3.2x health and 57x impressions in this dataset
+How: Review older pages with proven historical visibility, refresh outdated facts and examples, add missing subtopics, and resubmit the strongest 
+updates for recrawl.
+Expected: Lifts mature pages from roughly 10.7 health to 34.5 and materially improves impression potential.
+Measure: Track impressions, clicks, and average position on refreshed mature pages versus comparable untouched pages.
+FlyRank — The State of AI-Driven SEO, March 2026 9
+--- Page 10 ---
+FlyRank FINDING #5 — CONFIRMED
+Engagement and Visibility Move Together.
+High scroll + high engagement = +11.2 health points. Visibility consistency compounds the effect.
+SCROLL × ENGAGEMENT COUNT HEALTH AVG IMP AI % POS
+high_scroll × high 1.0K 50.7 629 5.75 15.9
+high_scroll × mid 3.6K 50.3 5.3K 1.78 14.3
+low_scroll × mid 10.7K 49.4 11.8K 1.34 14.2
+high_scroll × low 13.6K 46.7 1.1K 1.43 15.2
+low_scroll × low 32.9K 39.5 1.7K 1.53 14.2
+HEALTH BY VISIBILITY CONSISTENCY (DAYS VISIBLE IN 90)
+consistent 47
+intermittent 35
+moderate 34
+sporadic 28
+invisible 6
+In this portfolio, stronger engagement patterns and steadier visibility appear together. Content visible 80+ days scores 
+46.8 health. Sporadic content scores 28.4. The gap is 18.4 points — nearly a full tier difference.
+Improve scanability on pages that already earn consistent visibility
+Why: The strongest engagement bucket materially outperforms the weakest one in this dataset
+How: Use clearer sectioning, helpful jump links, tighter intros, and supporting visuals where they make the page easier to navigate and understand.
+Expected: Supports the engagement patterns associated with stronger visibility.
+Measure: Track scroll depth, clicks, and average position changes on the revised group.
+FlyRank — The State of AI-Driven SEO, March 2026 10
+--- Page 11 ---
+FlyRank FINDING #6 — CONFIRMED
+AI Traffic: A Different Signal.
+AI referrals are still small in portfolio terms, but the pages that attract them behave differently from classic 
+organic winners.
+AI BUCKET COUNT HEALTH AVG IMP AVG POS
+high_ai 873 47.4 24.9K 19.8
+some_ai 3.8K 46 10.4K 17
+no_ai 57.1K 43.3 2.7K 14.2
+AI TRAFFIC SHARE (%) — MONTHLY
+Oct 25 Nov 25 Dec 25 Jan 26 Feb 26 Mar 26
+AI REFERRAL PROVIDERS (LOCAL LAST-30D BREAKDOWN)
+OpenAI 4.2K
+Gemini 2.3K
+Perplexity 781
+Copilot 117
+Claude 83
+1.06%
+AI share of portfolio sessions
+7.59%
+AI page rate in active sample
+1.8x
+OpenAI vs Gemini (30d)
+The AI bucket behaves differently from classic organic winners. In this dataset, the high-AI group averages about 
+9x more impressions, yet its average Google position is weaker than the no-AI group. That suggests AI-referral visibility 
+is not simply a mirror of Google rank.
+The proportional caveat stays important: portfolio AI traffic is only 1.06% of tracked sessions (17.3K of 1.6M). Inside the 
+local active-content sample, the highest AI page rates show up in commercial intent and the 5K+ word-count bucket. 
+The safe conclusion is narrower: AI-referral visibility is real, growing, and behaviorally different from classic organic 
+traffic.
+FlyRank — The State of AI-Driven SEO, March 2026 11
+--- Page 12 ---
+Treat AI referrals as a separate visibility layer, not a portfolio headline on their own
+Why: AI traffic is still a small base, but the pages that attract it look structurally different from classic organic winners
+How: Review high-impression reference pages, tighten factual clarity, surface named evidence early, and monitor AI referrals separately from 
+search clicks.
+Expected: Improves AI-referral readiness without overstating the size of the channel.
+Measure: Track AI session share, provider mix, and page-level AI referral incidence alongside standard search metrics.
+FlyRank — The State of AI-Driven SEO, March 2026 12
+--- Page 13 ---
+FlyRank FINDING #7 — CONFIRMED
+The Winning Combinations.
+Intent, competition, and depth matter most when they work together rather than in isolation.
+AVERAGE HEALTH BY INTENT × COMPETITION LEVEL
+transactional × LOW 30
+transactional × MEDIUM 25
+transactional × HIGH 24
+commercial × LOW 28
+commercial × MEDIUM 23
+commercial × HIGH 23
+informational × LOW 22
+informational × MEDIUM 21
+Chart read: Each bar is one intent-and-competition pairing. Longer bars mean that combination tends to produce stronger pages in this portfolio, so start by copying the 
+top configurations before experimenting with harder ones.
+PAGE-1 CONTENT BY WORD COUNT TIER
+1000-2000 words 42
+2000-3500 words 40
+3500+ words 45
+Chart read: This second chart only looks at pages already on page 1. Use it to judge how much depth winning pages tend to need, not as a rule to make every page 
+longer.
+The cleanest combination in this portfolio is transactional intent with low competition. That bucket leads the 
+intent table on both health (30) and impressions (3.0K), while informational low-competition pages average 22.1 health 
+and 1.5K impressions.
+On page 1, longer content is not automatically better, but the strongest page-one word-count bucket in this export is 
+3500+ words: 44.8 health and 5.0K average impressions versus 40.1 health and 955 average impressions for the 
+weakest page-one word-count bucket. Depth appears most useful when a topic genuinely needs it and the page is 
+already competing for meaningful demand.
+Reserve a larger share of the calendar for lower-competition commercial or transactional topics
+Why: Those topics outperform the portfolio average in both visibility and FlyRank health context
+How: Map topics where the reader is already comparing options, then target the versions where the current result pages are beatable with a 
+stronger page rather than a bigger budget.
+Expected: Improves the odds of reaching page 1 faster and capturing more useful demand.
+Measure: Track impressions, clicks, and average position by intent class over the next publishing cycle.
+FlyRank — The State of AI-Driven SEO, March 2026 13
+--- Page 14 ---
+FlyRank FINDING #8 — CONFIRMED
+The Age-Freshness Matrix.
+Content performance is determined by both age and freshness, and the stale side is clearer once `181+` is 
+split into `181-360` and `361+`.
+HEALTH SCORE HEATMAP: AGE TIER × FRESHNESS TIER
+0-30 31-90 91-180 181-360 361+
+0-14 40.3
+15-30 42.3
+31-90 44.1 44.3
+91-180 41.6 38.5 45.2
+181-365 45.5 30.6 49.7 38.8
+365+ 44.6 31.6 46.4
+Four quadrants:
+1. Young + Fresh (31-90d age, 0-30d fresh): Health 44.12 — the growth engine. 
+2. Old + Refreshed (365+, 0-30d fresh): Health 44.62 — proof refresh works. 
+3. Mid + Stale (181-365d, 181-360 fresh): Health 38.75 — the main decay zone. 
+4. Old + Long-Unchanged (365+, 361+): Health 46.36 in a very small active-content survivor sample.
+The most powerful insight: old content that gets refreshed performs nearly as well as new content. The 365+ 
+refreshed quadrant (44.62) is close to the peak young-fresh quadrant (44.12). The small `365+ × 361+` cell should not 
+be used as a headline decay proof point because the active-content subset introduces strong survivor bias there.
+FlyRank — The State of AI-Driven SEO, March 2026 14
+--- Page 15 ---
+FlyRank FINDING #9 — NEW ANALYSIS
+Captured Traffic Value.
+The defensible proxy here is `clicks × CPC`, not `impressions × CPC`.
+CLICK-EQUIVALENT VALUE BY INTENT
+informational 74.9K
+commercial 86.1K
+transactional 92.0K
+navigational 549
+INTENT PAGES CLICKS CPC VALUE
+informational 36.8K 486.9K 0.15 $74.9K
+commercial 9.9K 127.3K 0.68 $86.1K
+transactional 10.5K 121.7K 0.76 $92.0K
+navigational 108 1.6K 0.35 $549
+$253.5K
+captured click-equivalent value
+$73.0M
+unsafe impressions × CPC
+clicks × 
+CPC
+recommended formula
+This is a value proxy, not booked revenue. CPC is a cost-per-click benchmark, so the defensible portfolio read is 
+captured click-equivalent value from clicks × CPC. Using impressions × CPC inflates the number dramatically 
+because impressions are not billable clicks.
+In the local active-content sample, transactional intent leads this captured-value view, followed by commercial intent. 
+That makes value density clearer than raw traffic volume alone.
+Use click-equivalent value to rank optimization candidates
+Why: It preserves CPC economics without pretending every impression is worth a click
+How: Prioritize visible pages where clicks already exist and the underlying CPC is meaningful, especially in transactional and commercial intent 
+buckets.
+Expected: Improves prioritization quality when traffic counts alone hide value density.
+Measure: Track click lift, weighted CPC, and click-equivalent value before and after optimization.
+FlyRank — The State of AI-Driven SEO, March 2026 15
+--- Page 16 ---
+FlyRank FINDING #10 — NUANCED
+AI Model Performance.
+The honest comparison is age-controlled. OpenAI and Gemini cohorts each lead in some windows, so the 
+result is exploratory rather than absolute.
+AGE-CONTROLLED COHORT HEALTH: OPENAI VS GEMINI
+0-14 15-30 31-90 91-180 181-365 365+
+OpenAI models Gemini models
+Chart read: Each age tier compares provider families inside the same publication band. Read it as a cohort comparison, not as proof that one provider family wins 
+everywhere.
+PROVIDER COUNT HEALTH AVG IMP AVG POS
+OpenAI 145.5K 18.92 689 15.7
+Gemini 91.4K 27.13 1.6K 15.6
+This section is best read as a process comparison, not a victory lap for one provider family.Once age mix is 
+controlled, Gemini leads some cohorts and OpenAI leads others. That is a cleaner view than the older dense table, but 
+it still does not justify a blanket claim that one model family universally wins.
+The safer conclusion is that output quality, editing, topic fit, and rollout timing matter more than a simple AI-versus-hu-
+man framing. This dataset does not support a blanket penalty narrative tied only to AI usage.
+Compare content systems within the same age and topic cohorts
+Why: The model picture changes once age mix is controlled
+How: When you test writing systems or prompts, review them inside the same publication window and topic class rather than comparing a newer 
+batch to an older installed base.
+Expected: Produces cleaner decisions about which production workflow actually performs better.
+Measure: Track impressions, average position, and health context within matched cohorts at 30, 60, and 90 days.
+FlyRank — The State of AI-Driven SEO, March 2026 16
+--- Page 17 ---
+FlyRank FINDING #11 — TREND ANALYSIS
+Portfolio-Level Trends.
+How portfolio metrics evolved over 6 months — impressions, clicks, sessions, and AI traffic.
+MONTHLY IMPRESSIONS
+10 11 12 01 02 03
+Chart read: Read this as a portfolio trend line, not a page-level benchmark. A rising line means the overall content base is earning more visibility over time, while a flat 
+or falling line signals slowing momentum.
+MONTH IMPRESSIONS CLICKS SESSIONS AI SESSIONS ACTIVE CONTENT
+2025-10 12.5M 75.6K 22.2K 422 17.3K
+2025-11 64.4M 271.7K 229.9K 3.7K 93.5K
+2025-12 91.3M 297.2K 208.2K 3.8K 98.4K
+2026-01 105.7M 375.4K 219.4K 4.8K 110.0K
+2026-02 154.0M 508.7K 345.3K 5.8K 156.4K
+2026-03 188.2M 568.6K 1.0M 6.1K 178.3K
+The portfolio has grown steadily across all metrics, with impressions and active content count increasing each month. 
+AI sessions show the steepest growth trajectory — a trend that aligns with the broader industry shift toward AI-powered 
+search interfaces.
+FlyRank — The State of AI-Driven SEO, March 2026 17
+--- Page 18 ---
+FlyRank WHAT WEAKENED OR FAILED
+What Weakened, Reversed, or Stayed Nuanced.
+The paper keeps negative and mixed results visible because they improve decision quality and prevent 
+overclaiming.
+2
+reversed myths
+2
+nuanced myths
+1
+direct debunk
+These are not filler pages. They are the guardrails that keep the playbook honest. When a popular SEO belief did not 
+survive contact with the portfolio, we kept the negative result instead of smoothing it into a more marketable story.
+REVERSED High search volume is not the safest demand target
+Lower-volume demand often converts into healthier pages because it is easier to win and match intent.
+REVERSED Optimization flags mark leverage, not failure
+Flagged content is often already visible enough to measure, which makes it a better optimization target.
+NUANCED Word count works as a threshold, not a guarantee
+Depth helps until the topic is sufficiently covered. After that, extra length produces diminishing returns.
+DEBUNKED AI-generated content is not penalized by default
+Quality and model/process differences matter more than whether an AI helped draft the page.
+NUANCED Freshness amplifies quality, it does not replace it
+Refreshing strong pages works far better than refreshing thin pages that were weak to begin with.
+FlyRank — The State of AI-Driven SEO, March 2026 18
+--- Page 19 ---
+FlyRank MYTH #2 — REVERSED
+"High Search Volume = More Traffic."
+Search volume is a weak expectation-setting number on its own. The local active-content sample shows that 
+pages often outpace the nominal keyword-volume benchmark.
+HEALTH SCORE BY SEARCH VOLUME BUCKET
+SV 1-100 44
+SV 100-1K 42
+SV 1K-10K 40
+SV 10K+ 44
+SV BUCKET COUNT AVG SV AVG IMP IMP > SV HEALTH POS
+1-100 25.4K 22 3.5K 87.88 44.4 13.4
+100-1K 4.0K 302 3.7K 64.94 41.9 16.8
+1K-10K 874 2.9K 3.2K 29.75 39.7 20.7
+10K+ 119 38.1K 6.9K 7.56 43.6 21.1
+82.89%
+pages above keyword volume
+0.0083
+raw SV ” imp correlation
+-0.0419
+log SV ” imp correlation
+The local active-content sample outpaces the keyword-volume benchmark more often than not.Specifically, 
+82.89% of pages with non-zero volume show impressions above the stored search-volume figure.
+The raw correlation between stored search volume and page impressions is 0.0083, and the log-scaled version is 
+-0.0419: both are weak. Low-volume buckets still look easiest to outperform, while the highest-volume terms remain 
+the least likely to beat their benchmark. That makes search volume more useful as a rough competition hint than as a 
+literal traffic forecast.
+Use search volume as a competition hint, not a literal traffic forecast
+Why: Local page-level performance only weakly tracks the stored keyword-volume benchmark
+How: Start from beatable demand and clear intent match, then use search volume as a rough prior instead of treating it as the page’s expected 
+ceiling.
+Expected: Improves the chance of targeting topics where real page-level upside is understated by keyword tools.
+Measure: Track average position, page-level impressions, and the share of pages exceeding their nominal keyword-volume benchmark.
+FlyRank — The State of AI-Driven SEO, March 2026 19
+--- Page 20 ---
+FlyRank MYTH #3 — REVERSED
+"Content With Flags Is Failing."
+Internal optimization flags are workflow signals, not natural definitions of content quality.
+HEALTH SCORE BY NUMBER OF ACTIVE OPTIMIZATION FLAGS
+0 flags 36
+1 flags 34
+2 flags 42
+3 flags 47
+4 flags 47
+5 flags 45
+This was one of the most counterintuitive findings in the paper. Content with 2-3 optimization flags can score better 
+than content with zero flags.
+The reason is structural: many flags can only trigger on pages that already have enough impressions or behavior data 
+to diagnose a concrete issue. A page with zero visibility may receive no tactical flags at all.
+Implication: flagged content is often better optimization material than invisible content, but the signal should be read 
+as workflow priority rather than a public claim that flagged pages are inherently stronger.
+Treat measurable optimization issues as priority opportunities
+Why: A page with a specific diagnosed issue is usually easier to improve than a page with no measurable demand
+How: Review visible pages for the exact problem they show, such as weak click capture or thin coverage, then fix that issue first instead of rewriting 
+the whole asset.
+Expected: Focuses effort on pages where the upside is knowable and more immediate.
+Measure: Track impressions, clicks, and average position before and after each targeted fix.
+FlyRank — The State of AI-Driven SEO, March 2026 20
+--- Page 21 ---
+FlyRank MYTH #4 — NUANCED
+"Longer Content Always Ranks Better."
+The cleaner local pattern is visibility, not a universal rule. Longer content tends to earn more impressions 
+and clicks, but that still does not make word count a guarantee.
+AVERAGE IMPRESSIONS BY WORD COUNT BUCKET
+<1K 3.8K
+1K-1.5K 3.1K
+1.5K-2K 3.2K
+2K-2.5K 1.3K
+2.5K-3.5K 1.2K
+3.5K-5K 2.5K
+5K+ 8.8K
+WORDS PAGES AVG IMP CLICKS SESSIONS AI PAGE %
+<1K 12.3K 3.8K 12.88 14.58 5.47
+1K-1.5K 7.2K 3.1K 10.66 14.67 3.1
+1.5K-2K 7.0K 3.2K 11.15 15.8 4.39
+2K-2.5K 1.8K 1.3K 5.98 5.95 2.39
+2.5K-3.5K 14.5K 1.2K 5.91 7.98 2.8
+3.5K-5K 9.8K 2.5K 9.08 19.56 7.1
+5K+ 9.4K 8.8K 26.9 94.02 25.11
+The local active-content snapshot shows a visibility gradient, not a magic threshold.The strongest traffic bucket 
+here is 5K+, which leads impressions, clicks, sessions, and AI-page incidence.
+The takeaway stays nuanced: depth clearly correlates with visibility in this sample, but that does not mean every topic 
+needs 5,000+ words. Quality depth still beats arbitrary length, and the local cached exports do not support a clean 
+page-level duration sweet spot yet.
+Use depth deliberately on pages that already show demand
+Why: Longer buckets in the local active-content sample carry materially more impressions, clicks, and AI incidence
+How: Expand thin but visible pages with missing subtopics, examples, comparisons, and evidence instead of padding every page to a fixed word 
+target.
+Expected: Improves visibility where additional depth is most likely to matter.
+Measure: Track impressions, clicks, sessions, and AI page incidence by refreshed word-count bucket.
+FlyRank — The State of AI-Driven SEO, March 2026 21
+--- Page 22 ---
+FlyRank MYTH #5 — DEBUNKED
+"AI-Generated Content Is Penalized."
+Within this mostly AI-authored portfolio, age-controlled model cohorts do not show a simple blanket penalty 
+tied only to AI use.
+This is perhaps the most debated topic in SEO circles: does Google penalize AI-generated content? Our dataset of 
+341,018 pieces — almost all AI-generated across 5 different models — provides a unique perspective. 
+When we compared models inside the same age tiers, the differences moved around rather than pointing to a single 
+winner. Both stronger and weaker outcomes show up inside AI-authored cohorts. That means the meaningful distinction 
+is process quality, not a simple AI-versus-human split.
+This portfolio does not show a blanket penalty tied only to AI use. The safer interpretation is that model choice, 
+editing standards, and topic fit drive the differences we see. Quality controls matter far more than whether a given draft 
+came from one AI workflow or another.
+Evaluate publishing systems by results, not ideology
+Why: The differences in this portfolio come from model and process quality, not a simple yes-or-no AI penalty
+How: Test writing systems within the same topic and publication window, then compare how they perform after launch instead of assuming one 
+method is inherently safer.
+Expected: Keeps content operations evidence-led and avoids false binary decisions about AI use.
+Measure: Track impressions, average position, and quality-review outcomes by workflow cohort.
+FlyRank — The State of AI-Driven SEO, March 2026 22
+--- Page 23 ---
+FlyRank MYTH #6 — NUANCED
+"Keyword Difficulty Is a Reliable Predictor."
+Competition level matters, but the difference is smaller than you'd expect — and the growth ratio tells the 
+real story.
+COMPETITION HEALTH AVG IMP AVG POS GROWING DECLINING COUNT
+LOW 23.8 1.8K 15.7 58.3K 27.2K 226.0K
+HIGH 22.9 976 18.5 6.7K 5.3K 27.0K
+MEDIUM 22.6 1.2K 20.2 5.3K 3.0K 19.9K
+LOW competition: health 23.8, growth-to-decline ratio 2.1:1. HIGH competition: health 22.9, ratio 1.3:1. The health 
+difference is small (only 0.9 points), but the growth ratio tells the real story.
+LOW competition keywords are 62% more likely to grow than HIGH competition ones. The competition metric works 
+— but not as a ranking predictor. It's a  growth probability indicator.
+FlyRank — The State of AI-Driven SEO, March 2026 23
+--- Page 24 ---
+FlyRank MYTH #7 — NUANCED
+"Fresh Content Always Outperforms."
+Freshness amplifies quality — it doesn't replace it. Thin content stays thin regardless of update date.
+FRESHNESS WORD COUNT COUNT HEALTH AVG IMP POS
+0-30 1000-2000 25.6K 34.1 1.9K 16.6
+0-30 2000-3500 32.3K 26.3 691 12.5
+0-30 3500+ 90.1K 28.7 3.5K 17.2
+0-30 <1000 151 14.6 66 38.1
+31-90 1000-2000 9.3K 12.5 51 32.2
+31-90 2000-3500 24.2K 25.3 522 11.9
+31-90 3500+ 16.9K 24.1 1.2K 16.6
+31-90 <1000 415 13.5 164 52
+91-180 1000-2000 6.8K 9.9 2 10.8
+91-180 2000-3500 2.7K 15.9 690 13
+91-180 3500+ 19.7K 21.8 963 21.4
+91-180 <1000 26.0K 20.3 6 9.1
+181+ 1000-2000 41.3K 9.3 13 19.2
+181+ 2000-3500 1.3K 12.6 62 17.7
+181+ 3500+ 41.0K 15.9 684 14.7
+181+ <1000 4.0K 8.2 1 14.2
+When we controlled for word count, the picture changed materially. At 3500+ words, fresh content (0-30d) scores 28.7 
+health vs stale (181+) at 15.9 — a 12.8-point gap. At <1000 words, fresh scores 14.6vs stale at 8.2 — a 6.4-point gap, 
+but that thin-content bucket is very small.
+Freshness multiplies existing quality. Refreshing a comprehensive, well-structured piece produces dramatic results. 
+Thin pages can still improve when refreshed, but the upside is lower and the evidence base is much smaller. This 
+means refresh efforts should be prioritized on your best content first.
+FlyRank — The State of AI-Driven SEO, March 2026 24
+--- Page 25 ---
+FlyRank ML APPENDIX — CORRELATIONS
+What Actually Correlates?
+Exploratory appendix: Pearson correlation matrix across 16 numeric features from 61.8K content pieces with 
+active sessions and impressions. Direct aggregate comparisons elsewhere in the paper remain the primary 
+evidence base.
+FEATURE CORRELATION HEATMAP (PEARSON R)
+health
+scoreimpressionsclicks sessions
+ai
+sessions
+scroll
+rate
+engagement
+rate ctr
+avg
+position
+content
+age_days
+days
+since_update
+word
+count
+search
+volume cpc competition
+days
+with_impressions
+health score 1.0 0.3 0.2 0.2 0.0 0.2 0.1 0.1 -0.6 0.0 -0.0 -0.0 -0.0 0.0 -0.0 0.3
+impressions 0.3 1.0 0.7 0.6 0.3 -0.1 0.0 -0.0 -0.0 0.1 -0.1 0.1 0.0 -0.0 -0.0 0.3
+clicks 0.2 0.7 1.0 0.7 0.2 -0.1 0.0 0.0 -0.1 0.1 -0.0 0.1 -0.0 -0.0 -0.0 0.2
+sessions 0.2 0.6 0.7 1.0 0.4 -0.1 0.0 -0.0 0.0 0.0 -0.1 0.3 -0.0 -0.0 -0.1 0.3
+ai sessions 0.0 0.3 0.2 0.4 1.0 -0.0 0.0 -0.0 0.0 0.0 -0.0 0.2 -0.0 -0.0 -0.0 0.1
+scroll rate 0.2 -0.1 -0.1 -0.1 -0.0 1.0 0.2 0.0 0.0 0.0 0.1 -0.1 0.0 -0.0 -0.1 -0.1
+engagement
+rate 0.1 0.0 0.0 0.0 0.0 0.2 1.0 0.1 0.0 0.1 -0.0 -0.1 -0.0 -0.0 -0.0 0.0
+ctr 0.1 -0.0 0.0 -0.0 -0.0 0.0 0.1 1.0 -0.1 -0.0 0.1 -0.0 -0.0 -0.0 -0.0 -0.1
+avg position -0.6 -0.0 -0.1 0.0 0.0 0.0 0.0 -0.1 1.0 0.1 -0.0 -0.0 0.0 -0.0 -0.0 0.0
+content
+age_days 0.0 0.1 0.1 0.0 0.0 0.0 0.1 -0.0 0.1 1.0 0.2 -0.5 0.1 0.0 -0.0 0.5
+days
+since_update -0.0 -0.1 -0.0 -0.1 -0.0 0.1 -0.0 0.1 -0.0 0.2 1.0 -0.1 -0.0 -0.0 -0.1 -0.3
+word count -0.0 0.1 0.1 0.3 0.2 -0.1 -0.1 -0.0 -0.0 -0.5 -0.1 1.0 -0.0 -0.1 -0.1 -0.0
+search
+volume -0.0 0.0 -0.0 -0.0 -0.0 0.0 -0.0 -0.0 0.0 0.1 -0.0 -0.0 1.0 0.0 0.0 0.0
+cpc 0.0 -0.0 -0.0 -0.0 -0.0 -0.0 -0.0 -0.0 -0.0 0.0 -0.0 -0.1 0.0 1.0 0.3 0.0
+competition -0.0 -0.0 -0.0 -0.1 -0.0 -0.1 -0.0 -0.0 -0.0 -0.0 -0.1 -0.1 0.0 0.3 1.0 -0.0
+days
+with_impressions 0.3 0.3 0.2 0.3 0.1 -0.1 0.0 -0.1 0.0 0.5 -0.3 -0.0 0.0 0.0 -0.0 1.0
+Chart read: Dark cells mark features that tend to move together inside the active-content sample. Use this to spot overlapping signals and avoid treating highly related 
+metrics as separate independent wins.
+STRONGEST POSITIVE CORRELATIONS
+Impressions × Clicks: r=0.708
+Clicks × Sessions: r=0.666
+Impressions × Sessions: r=0.62
+Content Age × Days Visible: r=0.496
+Sessions × ai Sessions: r=0.354
+STRONGEST NEGATIVE CORRELATIONS
+health score × Average Position: r=-0.592
+Content Age × Word Count: r=-0.517
+Days Since Update × Days Visible: r=-0.26
+Scroll Depth × Days Visible: r=-0.141
+Days Since Update × Word Count: r=-0.132
+Chart read: The lists below summarize the strongest pairings from the heatmap. Treat them as descriptive relationships inside the sample, not as proof that changing 
+one metric will automatically move the other.
+FlyRank — The State of AI-Driven SEO, March 2026 25
+--- Page 26 ---
+FlyRank ML APPENDIX — CONTENT ARCHETYPES
+The Content Archetypes.
+Exploratory k-means clustering (k=5) groups the sampled active-content set into 5 segments. These are 
+descriptive clusters, not production-ready personas.
+Cluster 1 (3% of content, n=1.9K)
+Exploratory segment with 3% of the sampled ML set (n=1856).
+Original heuristic label in the analysis script: Champions
+Health: 53.09 Impressions: 37.9K Position: 16.4 Age: 196d Words: 5.0K
+Cluster 2 (14.9% of content, n=9.2K)
+Exploratory segment with 14.9% of the sampled ML set (n=9211).
+Original heuristic label in the analysis script: Rising Stars
+Health: 48 Impressions: 928 Position: 12.6 Age: 180d Words: 2.3K
+Cluster 3 (24% of content, n=14.9K)
+Exploratory segment with 24% of the sampled ML set (n=14857).
+Original heuristic label in the analysis script: Rising Stars
+Health: 47 Impressions: 3.9K Position: 14.7 Age: 313d Words: 689
+Cluster 4 (10.8% of content, n=6.7K)
+Exploratory segment with 10.8% of the sampled ML set (n=6657).
+Original heuristic label in the analysis script: Rising Stars
+Health: 43.2 Impressions: 2.0K Position: 12.7 Age: 137d Words: 2.3K
+Cluster 5 (47.3% of content, n=29.2K)
+Exploratory segment with 47.3% of the sampled ML set (n=29209).
+Original heuristic label in the analysis script: Rising Stars
+Health: 39.9 Impressions: 2.3K Position: 15.2 Age: 97d Words: 3.8K
+Chart read: Each card is one cluster profile from the sampled active-content set. Compare the mixes of visibility, age, and depth across cards to understand common 
+content states, but do not treat these groups as fixed audience personas.
+These clusters are useful for exploratory segmentation, but the names in the original analysis were heuristic and 
+sometimes duplicated. For public reporting, the safer use is to compare cluster profiles, not to treat them as fixed 
+operational archetypes.
+FlyRank — The State of AI-Driven SEO, March 2026 26
+--- Page 27 ---
+FlyRank ML APPENDIX — FEATURE IMPORTANCE
+What Predicts Health?
+Random Forest feature importance for predicting health score. The model is holdout-tested, but the target 
+itself is partly constructed from some of these inputs, so importance is descriptive rather than causal.
+FEATURE IMPORTANCE (RANDOM FOREST ’ HEALTH SCORE)
+Average Position 43
+Impressions 32
+Scroll Depth 15
+CTR 8
+Clicks 2
+Sessions 0
+Content Age 0
+Word Count 0
+Days Visible 0
+AI Sessions 0
+Chart read: Higher bars mean the model leaned more heavily on that feature when estimating health score. Because health score already includes some visibility inputs, 
+read this as model behavior, not as a standalone optimization order.
+Average Position is the #1 predictor of health score at 43% importance, followed by Impressions (32%) and 
+Scroll Depth (15%). This ranking shows which features the model uses most, though note that health score is partly 
+constructed from inputs such as position and impressions. High importance is therefore expected and does not imply 
+external causation.
+PCA 2D PROJECTION — COLORED BY CLUSTER
+PC1 (18% variance)
+PC2 (12% variance)
+Cluster 1 Cluster 2 Cluster 3 Cluster 4 Cluster 5
+FlyRank — The State of AI-Driven SEO, March 2026 27
+--- Page 28 ---
+Chart read: Each dot is one sampled page projected into two simplified dimensions. Tighter color groupings mean the cluster is more internally similar, while overlap 
+means the segment boundaries are fuzzy rather than cleanly separated.
+FlyRank — The State of AI-Driven SEO, March 2026 28
+--- Page 29 ---
+FlyRank ML APPENDIX — GROWTH & CLASSIFICATION
+What Predicts Growth?
+Logistic regression (71% holdout accuracy) describing which sampled features separate growing from 
+declining pages.
+GROWTH PREDICTION COEFFICIENTS (LOGISTIC REGRESSION)
+Content Age 1
+Days Since Update 1
+Days Visible 1
+Average Position 0
+Word Count 0
+Impressions 0
+Search Volume 0
+Clicks 0
+AI Sessions 0
+Sessions 0
+Chart read: Green bars point toward growth in this model and red bars point away from it. The bar size shows relative influence inside the sampled dataset, so use it to 
+prioritize investigation rather than to assume a guaranteed lever.
+Content age is the strongest negative signal in this model, while days visible and recent impressions are among 
+the strongest positive signals. Read these as descriptive indicators from the sampled active-content set, not as direct 
+instructions to optimize one variable in isolation.
+The shallow decision tree is now holdout-tested as well, but it should still be treated as a simple descriptive ruleset. 
+It is most useful for seeing which combinations of visibility, clicks, and engagement separate healthier pages from 
+weaker ones in the sample.
+TOP 10% VS BOTTOM 10% CONTENT PROFILE
+DECILE HEALTH AVG IMP POS AGE FRESH WORDS COUNT
+bottom_10pct 5 0 - 97d 81d 2.6K 34.2K
+top_10pct 57.1 10.3K 6.3 201d 55d 3.2K 34.2K
+Chart read: This comparison shows what the strongest decile looks like versus the weakest one. Use it as a benchmark gap analysis: if your page profile resembles the 
+lower row, you know which broad traits still need work.
+The contrast is useful but still descriptive: stronger pages in this sample tend to be fresher, longer, and much better 
+positioned than weaker ones. The table is best used as a benchmark profile, not as a guaranteed formula.
+FlyRank — The State of AI-Driven SEO, March 2026 29
+--- Page 30 ---
+FlyRank ML APPENDIX — DISTRIBUTIONS
+Metric Distributions.
+Normalized percentile view of the sampled active-content set. Each row is scaled independently so smaller 
+metrics remain readable.
+PERCENTILE BOX PLOTS (P10 / P25 / P50 / P75 / P90)
+health score
+Impressions
+Clicks
+Sessions
+ai Sessions
+Scroll Depth
+Engagement Rate
+CTR
+Chart read: Each row is scaled independently, so the shape matters more than the raw bar length. Use the median and upper-percentile markers to judge whether a 
+page sits near the middle of the pack or in the stronger tail of the portfolio.
+METRIC P10 P25 MEDIAN P75 P90 MEAN
+health score 25 35 45 50 60 43.57
+Impressions 10 91 668 2972 8878.1 3510.32
+Clicks 0 0 1 7 26 12.12
+Sessions 1 1 4 17 61 25.75
+ai Sessions 0 0 0 0 0 0.26
+Scroll Depth 0 0 8.86 28.57 57.14 20.28
+Engagement Rate 0 0 0 0 8.7 3.34
+CTR 0 0 0.13 0.45 1.05 0.7
+Use these percentiles as directional benchmarks for the active-content sample rather than universal thresholds. The 
+chart is normalized for readability; the table holds the actual numeric values.
+FlyRank — The State of AI-Driven SEO, March 2026 30
+--- Page 31 ---
+FlyRank THE PLAYBOOK
+Priority Actions.
+Ranked by the clearest, most defensible patterns in this study. Start with the actions that preserve or extend 
+existing visibility.
+1 Refresh mature pages before they decay
+The refresh effect is one of the clearest signals in the dataset: older pages that were updated recently outperform similarly 
+old stale pages by a wide margin.
+2 Improve page-one click capture before rebuilding from scratch
+Pages that already rank well can often return clicks faster through snippet, clarity, and relevance improvements than 
+net-new content can.
+3 Prioritize lower-competition commercial intent where possible
+Commercial and transactional low-competition topics outperform more crowded configurations on both health context and 
+impressions.
+4 Use content depth where the topic requires it
+The strongest lift happens when thin but visible pages become genuinely useful, not when pages are padded for length 
+alone.
+5 Distribute proven pages across more than one channel
+The strongest pages in this portfolio rarely rely on search alone. Support strong pages after publication.
+6 Use optimization flags as workflow cues, not quality judgments
+Measured issues on already-visible pages are usually more actionable than pages with no measurable demand.
+7 Monitor AI-referral content as a separate visibility layer
+AI-attracting pages behave differently from classic organic winners, so they deserve their own monitoring and editorial 
+review.
+8 Resolve cannibalization where multiple pages split the same demand
+73.2M impressions are tied up in overlapping demand. Consolidation and clearer targeting can release that value.
+FlyRank — The State of AI-Driven SEO, March 2026 31
+--- Page 32 ---
+FlyRank PLAYBOOK: CONTENT REFRESH
+The Content Refresh Playbook.
+Step-by-step process backed by our freshness and age analysis findings.
+1. Identify refresh candidates
+Why: Content declines from 33.1 at 61-90 days to 14 by 271-365 days in the local age curve
+How: List older pages that used to earn impressions or still have meaningful visibility. Start with pages that are clearly dated, incomplete, or no 
+longer competitive.
+Expected: Targets the highest-value content most likely to recover
+Measure: Track refreshed-page count, health score lift, and 30-day impression recovery versus untreated candidates.
+2. Audit and expand thin sections
+Why: Top 10% content averages 3.2K words versus 2.6K in the bottom 10%
+How: Read the page end to end, identify weak sections, then add missing definitions, examples, comparisons, and current evidence instead of 
+padding.
+Expected: Improves depth where missing coverage is holding back an already-visible page
+Measure: Track word-count expansion, health score change, and impression lift by refresh batch.
+3. Update all statistics, dates, and references
+Why: The strongest measured freshness window is 31-90 days at 7.88:1 growth to decline
+How: Replace stale figures, update named sources, add recent examples, fix broken links, and make the page visibly current for both users and 
+search engines.
+Expected: Aligns the page with the strongest measured freshness band in this dataset
+Measure: Track time-to-reindex, 30-day impression lift, and CTR lift after the update goes live.
+4. Improve engagement elements
+Why: High scroll + high engagement outperforms the weakest bucket by 11.2 health points
+How: Add table-of-contents links where useful, break dense sections into scannable blocks, and use visuals or callouts where they actually help 
+comprehension.
+Expected: Supports the engagement patterns associated with stronger visibility
+Measure: Track scroll depth, engagement rate, and health score before and after layout changes.
+5. Re-submit and monitor
+Why: Updated content still needs re-crawl and a monitored follow-up window
+How: Request recrawl where appropriate, republish the update through your normal distribution channels, and check the page again at 30, 60, 
+and 90 days.
+Expected: Keeps the refresh program tied to measured follow-up windows instead of one-time edits
+Measure: Track reindex confirmations, ranking recovery, and 30/60/90-day health score trend.
+FlyRank — The State of AI-Driven SEO, March 2026 32
+--- Page 33 ---
+FlyRank PLAYBOOK: AI TRAFFIC
+AI Traffic Optimization Guide.
+Treat AI referrals as a real but still small traffic layer, and optimize around what is measured rather than 
+around assumed platform rules.
+In our dataset, content attracting AI sessions has a distinct profile: higher average impressions, deeper ranking 
+positions, and stronger portfolio-level visibility than content without AI referrals. The scale caveat matters: AI referrals 
+account for only 1.06% of tracked sessions in the local portfolio snapshot.
+What Our Data Shows About AI-Attracting Content
+High-AI content in our portfolio averages a weaker Google position but much higher impressions than no-AI content. Inside the local 
+active-content sample, the highest AI page rates appear in commercial intent and the 5K+ word-count bucket.
+Practical Optimization Steps
+1. Monitor AI referrals separately from organic clicks and pageview totals.
+2. Prioritize clear factual statements, named evidence, and easy-to-scan structure.
+3. Review provider mix regularly: OpenAI 4.2K | Gemini 2.3K | Perplexity 781 | Copilot 117 | Claude 83.
+4. Focus first on reference-style pages that already carry broad visibility.
+5. Treat monetization claims cautiously unless attribution is session-level and clean.
+Important caveat: we do not treat revenue as a headline proof point for AI traffic here. The available export is a 
+content-level bucket, not a clean session-level attribution model, so the reliable use case is visibility analysis rather 
+than direct monetization forecasting.
+FlyRank — The State of AI-Driven SEO, March 2026 33
+--- Page 34 ---
+FlyRank PLAYBOOK: QUICK WINS
+The Quick Wins Checklist.
+Actions you can take this week based on our findings.
+TODAY Review measured optimization issues on already-visible pages
+Pages with specific, observable issues are often the fastest wins because the upside is measurable.
+TODAY Review your best 20 striking-distance pages
+Pages close to page 1 are usually better candidates for focused improvement than low-visibility pages with no traction.
+THIS WEEK Refresh your oldest high-visibility pages
+Older pages with prior visibility are the cleanest candidates for a recency and depth update.
+THIS WEEK Improve readability on top-performing long pages
+Clear navigation, sectioning, and scanability support the engagement patterns associated with stronger pages.
+THIS MONTH Consolidate overlapping pages that split the same demand
+Choose the strongest page, merge overlapping coverage, and remove avoidable competition between your own 
+URLs.
+THIS MONTH Expand high-potential thin pages
+Focus on the thin pages that already earn impressions instead of trying to bulk-expand low-demand inventory.
+ONGOING Keep a rolling refresh calendar
+The strongest freshness effects appear when updates happen before a page has fully decayed.
+ONGOING Support new and strong pages with distribution
+Email, social, internal links, and referral placement help strong pages become durable assets instead of one-chan-
+nel pages.
+FlyRank — The State of AI-Driven SEO, March 2026 34
+--- Page 35 ---
+FlyRank PORTFOLIO RISKS
+Structural Risks.
+These are the portfolio-wide issues most likely to suppress performance even when individual pages are 
+strong.
+703.2K
+cannibalizing queries
+73.2M
+impressions at risk
+274.4K
+clicks at risk
+Critical   66.6 % High   8.7 % Medium   14.9 % Low   9.8 %
+Chart read: This bar shows how the cannibalization cases are distributed by severity. A larger red share means more overlapping demand needs consolidation or clearer 
+page targeting first.
+INDEXING COVERAGE
+confirmed indexed   58.2 % never indexed   41.8 %
+confirmed indexed (198.9K) never indexed (142.8K)
+Chart read: This bar shows how much of the portfolio is actually available to compete in search. If the indexed share is smaller than expected, fixing crawl and indexing 
+issues can unlock results before new content creation does.
+FlyRank — The State of AI-Driven SEO, March 2026 35
+--- Page 36 ---
+FlyRank METHODOLOGY
+Methodology & Limitations.
+Data Sources
+Google Search Console (GSC) and Google Analytics 4 (GA4) data aggregated in BigQuery through a read-only MCP service account with 
+SELECT -only guardrails.
+Study Scope
+90-day performance window (rolling), 30-day trend comparison, local historical monthly series, and local active-content feature-vector cuts 
+where noted.
+Evidence Standard
+Headline findings prioritize direct aggregate comparisons. ML pages are exploratory appendix material and do not override direct portfolio 
+evidence.
+Health Score
+Impressions (30 pts) + position (30 pts) + CTR (20 pts) + scroll depth (20 pts).
+ML Pipeline
+61.8K content pieces with sessions > 0 and impressions > 0 in the local feature-vector snapshot. Sklearn: K-Means (k=5), Random Forest 
+(80/20 split), Logistic Regression (80/20 split), PCA (2 components), and a shallow Decision Tree (80/20 split). ML pages remain exploratory 
+and secondary to direct aggregate comparisons.
+Statistical Approach
+Pearson correlation for numeric pairs. Minimum n=50 per analysis bucket (n=30 for cross-correlations). APPROX_QUANTILES for percentiles. 
+Weighted CTR is used where total clicks and impressions are available. No p-values or confidence intervals are reported.
+Confounding Variables
+Content age confounds model-performance comparisons. Revenue tracking covers 8 of 57 clients, so revenue is treated cautiously. 
+Known-referral rules may miss some AI sources, and several extended cuts come from the local active-content feature-vector subset rather 
+than full inventory.
+Limitations
+Observational study: correlations do not prove causation. Health score is a FlyRank composite metric, not a Google-endorsed standard. The 
+paper uses the local cached snapshot rather than fresh warehouse pulls. The cached feature vector does not include page-level engagement 
+seconds or a full ranking-query universe, so duration and primary-keyword relevance sections are not claimed here. Legacy exports were 
+excluded or demoted when provenance or metric meaning was not strong enough for public use, including the backlink page in this version.
+FlyRank — The State of AI-Driven SEO, March 2026 36
