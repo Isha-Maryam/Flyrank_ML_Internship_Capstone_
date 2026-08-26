@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Research: Predictive Modeling of SEO Content Decay | Isha Maryam</title>
+  <meta name="description" content="Research paper evaluating Random Forest vs. Heuristic Baselines for predicting SEO content decay across 30,000 active records.">
+  <style>
+    :root {
+      --bg-color: #0F172A;
+      --card-bg: #1E293B;
+      --text-color: #F8FAFC;
+      --text-muted: #94A3B8;
+      --accent: #F59E0B;
+      --border: #334155;
+    }
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: rgba(30, 41, 59, 0.8);
+      border-bottom: 1px solid var(--border);
+      padding: 2rem 1.5rem;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      backdrop-filter: blur(8px);
+      z-index: 100;
+    }
+    header h1 {
+      font-size: 2rem;
+      margin: 0 0 0.5rem 0;
+      color: var(--text-color);
+    }
+    header p {
+      color: var(--text-muted);
+      margin: 0;
+      font-size: 0.95rem;
+    }
+    main {
+      max-width: 800px;
+      margin: 3rem auto;
+      padding: 0 1.5rem;
+    }
+    section {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 2rem;
+      margin-bottom: 2.5rem;
+    }
+    h2 {
+      font-size: 1.4rem;
+      color: var(--accent);
+      margin-top: 0;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.5rem;
+    }
+    p, li {
+      color: #E2E8F0;
+      font-size: 1rem;
+    }
+    ul, ol {
+      padding-left: 1.5rem;
+    }
+    li {
+      margin-bottom: 0.5rem;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+    }
+    th, td {
+      border: 1px solid var(--border);
+      padding: 0.75rem;
+      text-align: left;
+    }
+    th {
+      background-color: rgba(15, 23, 42, 0.5);
+      color: var(--accent);
+    }
+    pre {
+      background-color: #0F172A;
+      padding: 1rem;
+      border-radius: 6px;
+      overflow-x: auto;
+      border: 1px solid var(--border);
+    }
+    code {
+      font-family: 'Fira Code', monospace;
+      font-size: 0.9rem;
+      color: #38BDF8;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 1.5rem auto;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+    }
+    footer {
+      text-align: center;
+      padding: 3rem 1.5rem;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      border-top: 1px solid var(--border);
+      background-color: #0F172A;
+    }
+    a {
+      color: #38BDF8;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .abstract-box {
+      background-color: rgba(245, 158, 11, 0.1);
+      border: 1px solid var(--accent);
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .abstract-box h3 {
+      margin-top: 0;
+      color: var(--accent);
+      font-size: 1.1rem;
+    }
+    .abstract-box p {
+      font-style: italic;
+      color: #E2E8F0;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Predictive Modeling of SEO Content Decay</h1>
+    <p>Evaluating Machine Learning Prioritization vs. Simple Heuristics on 30,000 Search Records</p>
+    <p style="margin-top: 0.5rem; font-size: 0.85rem;">Author: <strong>Isha Maryam</strong> &middot; Lane: <strong>Applied AI/ML Track</strong> &middot; Date: <strong>August 2026</strong></p>
+  </header>
+
+  <main>
+    <div class="abstract-box">
+      <h3>Abstract</h3>
+      <p>
+        This research paper addresses the challenge of search visibility decay across mature web content portfolios. Using a dataset of 30,000 active content records across 32 brands, we evaluated a Random Forest Classifier trained on a client-heldout grouped validation split against standard industry age-position heuristics. Our model achieved an out-of-sample Precision@50 of 0.5600 and a ROC-AUC of 0.6083, representing a +24% predictive lift over the baseline score (0.3200 precision). These results demonstrate the value of using multi-signal machine learning models as decision-support systems to prioritize editorial refresh budgets over static, calendar-based content review schedules.
+      </p>
+    </div>
+
+    <section id="problem">
+      <h2>1. Introduction & Problem Framing</h2>
+      <p>
+        In enterprise search engine optimization (SEO), older content assets naturally experience search visibility decay over time due to content staleness, changing search intents, and competitor activity. Standard industry workflows rely on simple heuristic rules—such as refreshing all pages older than six months or targeting low-ranking pages—to combat decay. However, these static rules do not scale and frequently lead to type I errors (editing stable evergreen pages) and type II errors (ignoring key assets that are rapidly losing search visibility).
+      </p>
+      <p>
+        This paper presents a machine learning solution to model and predict content decay on a rolling 90-day window, serving as a decision-support prioritization queue for editorial teams. By identifying high-risk decay candidates ahead of traffic drops, companies can focus their editorial budgets where they prevent traffic losses most effectively.
+      </p>
+    </section>
+
+    <section id="data">
+      <h2>2. Dataset & Safety</h2>
+      <p>
+        We utilized the FlyRank Starter Dataset, consisting of <strong>30,000 anonymized active content records</strong> representing search impressions, click-through rates (CTR), average search positions, and GA4 engagement metrics (scroll depth and engagement rate) across 32 distinct clients.
+      </p>
+      <p>
+        <strong>Data Safety & Leakage Exclusions:</strong>
+        To protect against target leakage, we excluded the `trend_pct` and `trend_direction` features because the binary target label is derived from these metrics. Client identifiers (`client_id`) were excluded from features to prevent the model from memorizing specific website domains, forcing the classifier to generalize based solely on page-level SEO signals.
+      </p>
+    </section>
+
+    <section id="methodology">
+      <h2>3. Methodology & Validation</h2>
+      <p>
+        We defined the target label as `is_declining_label = 1` if a page experienced a greater than 10% organic search impression decline in the last 30 days compared to the preceding 30 days. We implemented a **Grouped Client Split** (75% train, 25% test, grouped by `client_id`) to ensure that entire websites were held out during evaluation, simulating true model performance on new, unseen clients.
+      </p>
+      <p>
+        <strong>Features evaluated:</strong>
+        `impressions_90d`, `clicks_90d`, `sessions_90d`, `avg_position`, `ctr`, `engagement_rate`, `scroll_rate`, `content_age_days`, `days_since_last_update`, `word_count`, and `word_count_missing` (imputing missing values with the median).
+      </p>
+    </section>
+
+    <section id="results">
+      <h2>4. Results & Baseline Comparison</h2>
+      <p>
+        We compared our Random Forest Classifier (max_depth=10, estimators=100) against the standard heuristic baseline (`baseline_score = content_age_days * avg_position`) evaluated on the same client-heldout split.
+      </p>
+      
+      <table>
+        <thead>
+          <tr>
+            <th>Metric</th>
+            <th>Baseline Heuristic</th>
+            <th>Random Forest Model</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Precision@50</strong></td>
+            <td>0.3200</td>
+            <td><strong>0.5600 (+24% Lift)</strong></td>
+          </tr>
+          <tr>
+            <td><strong>ROC-AUC</strong></td>
+            <td>0.5298</td>
+            <td><strong>0.6083</strong></td>
+          </tr>
+          <tr>
+            <td><strong>Test Set Base Rate</strong></td>
+            <td>0.5165</td>
+            <td>0.5165</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>
+        The baseline heuristic fell below the random background rate of 0.5165. This occurs because the oldest pages on held-out sites represent highly stable, non-decaying evergreen content, which a simple age-based rule misclassifies. The Random Forest model corrected this by factoring in user engagement, achieving a true Precision@50 of 0.5600.
+      </p>
+
+      <h3>Relative Feature Importances</h3>
+      <p>The chart below displays the relative importance of each feature in the Random Forest classifier:</p>
+      <img src="img/feature_importances.png" alt="Random Forest Feature Importances Chart">
+      <p style="text-align: center; font-style: italic; font-size: 0.9rem; color: var(--text-muted);">
+        Figure 1: Impressions and Average Position are the primary predictive components of search visibility decay.
+      </p>
+    </section>
+
+    <section id="limitations">
+      <h2>5. Limitations & Honest Framing</h2>
+      <ul>
+        <li><strong>No Causal Guarantee:</strong> The model identifies correlation within our portfolio sample. It cannot prove that refreshing a page will guarantee visibility recovery.</li>
+        <li><strong>Algorithm and Seasonality Shifts:</strong> The model is blind to major search engine core updates and seasonal search volume shifts.</li>
+        <li><strong>New Content Blindness:</strong> Content younger than 30 days does not have stable indexing statistics and cannot be predicted by this framework.</li>
+      </ul>
+    </section>
+
+    <section id="recommendations">
+      <h2>6. Ranked Recommendations (Content Action Playbook)</h2>
+      <p>
+        We translated our model predictions into the following priority action playbook:
+      </p>
+      <ol>
+        <li><strong>Refresh Content (RC_HIGH_RISK_STALE):</strong> High predicted decay probability (>60%) and untouched for >90 days. Editorial priority: Update facts and statistics. (5,498 pages flagged).</li>
+        <li><strong>Optimize CTR (RC_PAGE1_WEAK_CTR):</strong> Page 1 visibility (positions 1-10) but low click capture (CTR < 0.5%). Editorial priority: Rewrite titles and descriptions. (8,343 pages flagged).</li>
+        <li><strong>Audit Content Value (RC_ZOMBIE_CANDIDATE):</strong> High decay risk on low-visibility pages (<500 impressions). Editorial priority: Merge or prune. (3,594 pages flagged).</li>
+      </ol>
+    </section>
+
+    <section id="reproducibility">
+      <h2>7. Reproducibility & Code</h2>
+      <p>
+        The code is structured as an open-source research pipeline. The full codebase, configurations, and evaluation runs can be inspected at:
+        <br>
+        <a href="https://github.com/Isha-Maryam/Flyrank_ML_Internship_Capstone_" target="_blank">GitHub Repository: Flyrank_ML_Internship_Capstone_</a>
+      </p>
+      <p>
+        <strong>To re-run the pipeline:</strong>
+      </p>
+      <pre><code>git clone https://github.com/Isha-Maryam/Flyrank_ML_Internship_Capstone_.git
+cd Flyrank_ML_Internship_Capstone_
+pip install -r requirements.txt
+python scripts/run_pipeline.py</code></pre>
+      <p>
+        All experiments are locked using a random seed of <code>42</code>.
+      </p>
+    </section>
+
+    <section id="acknowledgments">
+      <h2>8. Acknowledgments & Data Credit</h2>
+      <p>
+        This research was conducted using datasets provided by <a href="https://flyrank.ai" target="_blank">FlyRank.ai</a>. We thank the data engineering team for hosting the internship data warehouse.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Isha Maryam. Certified AI/ML Engineer. All rights reserved.</p>
+    <p>Powered by FlyRank Search Data &middot; Deployed via GitHub Pages</p>
+  </footer>
+
+</body>
+</html>
