@@ -1,0 +1,13 @@
+{
+    "total_pages_analyzed": 30000,
+    "action_distribution": {
+        "Monitor": 12565,
+        "Optimize CTR": 8343,
+        "Refresh Content": 5498,
+        "Audit Content Value": 3594
+    },
+    "high_risk_refresh_count": 5498,
+    "ctr_opt_count": 8343,
+    "zombie_audit_count": 3594,
+    "monitor_count": 12565
+}
